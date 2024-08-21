@@ -1,10 +1,10 @@
 # **Clean Code**
 
 ## 🔷 Mục lục
-- **[Giới thiệu về Clean Code](#-giới-thiệu-về-clean-code)**
+- **[Giới Thiệu Về Clean Code](#-giới-thiệu-về-clean-code)**
 - **[Các Nguyên Tắc Của Clean Code](#rule)**
 
-## 🔷 Giới thiệu về Clean Code
+## 🔷 Giới Thiệu Về Clean Code
 
 ### Clean Code
 
