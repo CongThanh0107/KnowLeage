@@ -24,13 +24,19 @@
 
 ### 1. Tên Biến, Hàm, và Lớp (Naming Variables, Functions, and Classes)
 
-#### Naming
+#### Đặt tên (Naming)
 
 - Đặt tên các thứ (**_= variables, properties, functions, methods, classes_**) một cách chính xác và dễ hiểu nếu là một phần cực kỳ quan trọng của việc viết mã sạch.
 
 - Tên có một mục đích đơn giản: Chúng phải mô tả những gì được lưu trữ trong một biến hoặc thuộc tính hoặc chức năng của một hàm hoặc phương thức hoặc loại đối tượng nào sẽ được tạo khi khởi tạo một lớp.
 
-#### Naming Rules
+#### Quy tắc đặt tên (Naming Rules)
 
 - **Variables & Properties:** 
   + Các biến và thuộc tính chứa dữ liệu : numbers, text (strings), boolean values, objects, lists, arrays, maps
+  + Các biến và thuộc tính thường phải có một danh từ làm tên. **Ví dụ:** _user, product, customer, database, transaction,..._
+  + Ngoài ra, bạn cũng có thể sử dụng một cụm từ ngắn có tính từ - thường để lưu trữ các giá trị boolean. **Ví dụ:** _isValid, didAuthenticate, isLoggedIn, emailExists,..._
+
+- **Functions & Methods:** Các hàm và phương thức có thể được gọi để thực thi một số mã. Điều đó có nghĩa là họ thực hiện các nhiệm vụ và hoạt động.
+  + Do đó, các hàm và phương thức thường phải nhận một động từ làm tên. **Ví dụ:** _login(), createUser(), database.insert(), log(),..._
+  + 
