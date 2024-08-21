@@ -23,3 +23,5 @@
 ## 🔷 Các Nguyên Tắc Của Clean Code
 
 ### 1. Tên Biến, Hàm, và Lớp (Naming Variables, Functions, and Classes)
+
+- **Naming:** Đặt tên các thứ (_**= variables, properties, functions, methods, classes_**) một cách chính xác và dễ hiểu nếu là một phần cực kỳ quan trọng của việc viết mã sạch.
