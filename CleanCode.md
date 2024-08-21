@@ -17,3 +17,5 @@
 - **Giảm Thiểu Lỗi (Error Reduction):** Mã sạch thường ít có lỗi hơn vì nó rõ ràng và dễ hiểu. Giảm lượng mã có thể dẫn đến việc giảm số lượng lỗi.
 
 - **Cải Thiện Tính Đọc (Readability Improvement):** Một mã được viết tốt sẽ dễ dàng tiếp cận hơn bởi các lập trình viên khác, hoặc thậm chí là chính tác giả trong tương lai. Điều này giúp tăng cường khả năng giao tiếp và hợp tác giữa các thành viên trong nhóm phát triển.
+
+- **Thúc Đẩy Tính Tái Sử Dụng (Reusability):** Mã sạch thường được tổ chức tốt hơn, cho phép các phần của nó dễ dàng tái sử dụng trong các dự án khác.
