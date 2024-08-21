@@ -43,4 +43,7 @@
   + Nên tránh những tên như: **_email(), user(),..._** Những tên này nghe giống như thuộc tính. Thay vào đó, hãy ưu tiên **_getEmail(),..._**
   + Giống như Variables & Properties, nếu bạn có thể cụ thể hơn thì việc sử dụng những tên cụ thể hơn như vậy thường hợp lý hơn. **Ví dụ:** **_createUser()_** thay vì chỉ **_create()_**.
 
-- **Classes:**
+- **Classes:** Các lớp được sử dụng để tạo các đối tượng (trừ khi đó là một static class).
+  + Do đó tên class phải mô tả loại đối tượng mà nó sẽ tạo. Ngay cả khi đó là một ltatic class (tức là nó sẽ không được khởi tạo), vẫn sẽ sử dụng nó như một loại vùng chứa cho các phần dữ liệu và/hoặc chức năng khác nhau.
+  + Tên class tốt cũng giống như tên biến và thuộc tính tốt nó thường là **danh từ**.
+  + **Ví dụ:** **_User, Product, RootAdministrator, Transaction, Payment,..._**
