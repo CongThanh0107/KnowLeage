@@ -19,3 +19,7 @@
 - **Cải Thiện Tính Đọc (Readability Improvement):** Một mã được viết tốt sẽ dễ dàng tiếp cận hơn bởi các lập trình viên khác, hoặc thậm chí là chính tác giả trong tương lai. Điều này giúp tăng cường khả năng giao tiếp và hợp tác giữa các thành viên trong nhóm phát triển.
 
 - **Thúc Đẩy Tính Tái Sử Dụng (Reusability):** Mã sạch thường được tổ chức tốt hơn, cho phép các phần của nó dễ dàng tái sử dụng trong các dự án khác.
+
+## 🔷 Các Nguyên Tắc Của Clean Code
+
+### 1. Tên Biến, Hàm, và Lớp (Naming Variables, Functions, and Classes)
