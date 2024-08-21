@@ -47,3 +47,7 @@
   + Do đó tên class phải mô tả loại đối tượng mà nó sẽ tạo. Ngay cả khi đó là một ltatic class (tức là nó sẽ không được khởi tạo), vẫn sẽ sử dụng nó như một loại vùng chứa cho các phần dữ liệu và/hoặc chức năng khác nhau.
   + Tên class tốt cũng giống như tên biến và thuộc tính tốt nó thường là **danh từ**.
   + **Ví dụ:** **_User, Product, RootAdministrator, Transaction, Payment,..._**
+
+  #### Tránh đặt tên chung chung (Avoid Generic Names)
+
+  - Trong hầu hết các trường hợp, bạn nên tránh các tên chung chung như **_hand(), process(), data, item,..._**
