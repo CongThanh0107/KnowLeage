@@ -36,16 +36,16 @@
   + Các biến và thuộc tính chứa dữ liệu : numbers, text (strings), boolean values, objects, lists, arrays, maps
   + Các biến và thuộc tính thường phải có một danh từ làm tên. **Ví dụ:** **_user, product, customer, database, transaction,..._**
   + Ngoài ra, bạn cũng có thể sử dụng một cụm từ ngắn có tính từ - thường để lưu trữ các giá trị boolean. **Ví dụ:** **_isValid, didAuthenticate, isLoggedIn, emailExists,..._**
-  + Ví dụ :
+  + **Ví dụ:**
     ```Python
       # Unclean Code  
       def calc(a, b):  
-      return a * b  
+        return a * b  
     ```
     ```Python
       #Clean Code
       def calculateArea(length, width):  
-      return length * width  
+        return length * width  
     ```
 
 - **Functions & Methods:** Các hàm và phương thức có thể được gọi để thực thi một số mã. Điều đó có nghĩa là họ thực hiện các nhiệm vụ và hoạt động.
@@ -53,11 +53,42 @@
   + Ngoài ra, các hàm và phương thức cũng có thể được sử dụng để chủ yếu tạo ra các giá trị - sau đó, đặc biệt là khi tạo các giá trị boolean, bạn cũng có thể sử dụng các cụm từ ngắn có tính từ. **Ví dụ:** **_isValid(...), isEmail(...), isEmpty(...),..._**
   + Nên tránh những tên như: **_email(), user(),..._** Những tên này nghe giống như thuộc tính. Thay vào đó, hãy ưu tiên **_getEmail(),..._**
   + Giống như Variables & Properties, nếu bạn có thể cụ thể hơn thì việc sử dụng những tên cụ thể hơn như vậy thường hợp lý hơn. **Ví dụ:** **_createUser()_** thay vì chỉ **_create()_**.
+  + **Ví dụ:**
+  ```Python
+    # Unclean Code  
+    def doStuff(x):  
+      return x + 5  
+  ```
+  ```Python
+    #Clean Code
+    def incrementByFive(number):  
+      return number + 5  
+  ```
 
 - **Classes:** Các lớp được sử dụng để tạo các đối tượng (trừ khi đó là một static class).
   + Do đó tên class phải mô tả loại đối tượng mà nó sẽ tạo. Ngay cả khi đó là một ltatic class (tức là nó sẽ không được khởi tạo), vẫn sẽ sử dụng nó như một loại vùng chứa cho các phần dữ liệu và/hoặc chức năng khác nhau.
   + Tên class tốt cũng giống như tên biến và thuộc tính tốt nó thường là **danh từ**.
   + **Ví dụ:** **_User, Product, RootAdministrator, Transaction, Payment,..._**
+  + **Ví dụ:**
+  ```Python
+    # Unclean Code  
+    class A:  
+      def __init__(self):  
+          self.value = 10  
+          
+      def getValue(self):  
+          return self.value   
+  ```
+  ```Python
+    #Clean Code
+    class Circle:  
+      def __init__(self, radius):  
+        self.radius = radius  
+        
+      def getArea(self):  
+        return 3.14 * self.radius * self.radius  
+ 
+  ```
 
 #### Tránh đặt tên chung chung (Avoid Generic Names)
 
