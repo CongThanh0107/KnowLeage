@@ -14,5 +14,6 @@
 
 - **Dễ Duy Trì (Maintainable):** Mã sạch giúp lập trình viên dễ dàng thực hiện các thay đổi mà không làm ảnh hưởng đến hệ thống. Điều này rất quan trọng trong việc phát triển phần mềm kéo dài, nơi mà yêu cầu có thể thay đổi thường xuyên
 
--**Giảm Thiểu Lỗi (Error Reduction):** Mã sạch thường ít có lỗi hơn vì nó rõ ràng và dễ hiểu. Giảm lượng mã có thể dẫn đến việc giảm số lượng lỗi.
+- **Giảm Thiểu Lỗi (Error Reduction):** Mã sạch thường ít có lỗi hơn vì nó rõ ràng và dễ hiểu. Giảm lượng mã có thể dẫn đến việc giảm số lượng lỗi.
 
+- **Cải Thiện Tính Đọc (Readability Improvement):** Một mã được viết tốt sẽ dễ dàng tiếp cận hơn bởi các lập trình viên khác, hoặc thậm chí là chính tác giả trong tương lai. Điều này giúp tăng cường khả năng giao tiếp và hợp tác giữa các thành viên trong nhóm phát triển.
