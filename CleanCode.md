@@ -38,9 +38,14 @@
   + Ngoài ra, bạn cũng có thể sử dụng một cụm từ ngắn có tính từ - thường để lưu trữ các giá trị boolean. **Ví dụ:** **_isValid, didAuthenticate, isLoggedIn, emailExists,..._**
   + Ví dụ :
     ```Python
-      /* Unclean Code */ 
+      # Unclean Code  
       def calc(a, b):  
       return a * b  
+    ```
+    ```Python
+      #Clean Code
+      def calculateArea(length, width):  
+      return length * width  
     ```
 
 - **Functions & Methods:** Các hàm và phương thức có thể được gọi để thực thi một số mã. Điều đó có nghĩa là họ thực hiện các nhiệm vụ và hoạt động.
