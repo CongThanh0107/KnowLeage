@@ -95,7 +95,8 @@
 
 ### 2. Cấu Trúc và Tổ Chức Mã Nguồn (Structure and Organization of Code)
 
-### 3. Comment (Ghi Chú)
+### 3. Comments & Formatting (Ghi Chú và Định dạng)
+  - Comment có thể giúp dễ đọc code hơn. Tuy nhiên trong thực tế điều ngược lại thường xảy ra. Mặt khác, định dạng mã phù hợp (thêm dòng trống,..) sẽ giúp ích rất nhiều cho việc đọc và hiểu mã.
 
 ### 4. Xử Lý Lỗi (Error Handling)
 
