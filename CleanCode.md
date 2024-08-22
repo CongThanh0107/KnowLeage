@@ -286,6 +286,84 @@
     # Tạo người dùng  
     user1 = User("user1", "password123")  
    ```
+ 
+ - **Control Structures:** Cho dù bạn đang phát triển loại ứng dụng nào - rất có thể bạn cũng sẽ sử dụng các cấu trúc điều khiển trong mã của mình: câu lệnh if, vòng lặp for, cũng có thể là vòng lặp while hoặc câu lệnh switch-case. Cấu trúc điều khiển cực kỳ quan trọng để điều phối luồng mã và tất nhiên bạn nên sử dụng chúng. Nhưng các cấu trúc điều khiển cũng có thể dẫn đến mã xấu hoặc dưới mức tối ưu và do đó đóng một vai trò quan trọng khi viết mã sạch.Có ba lĩnh vực cải tiến chính mà bạn nên biết:
+
+   + **Prefer positive checks(Ưu tiên kiểm tra tích cực):** Nguyên tắc này khuyên chúng ta nên ưu tiên viết các kiểm tra mà cho thấy cái gì đó đúng hoặc hợp lệ, thay vì viết các kiểm tra mà cho thấy cái gì đó sai hoặc không hợp lệ.
+    
+     ```python
+      #Unclean Code
+      def is_valid_user(user):  
+          if not user:  
+              return False  # Kiểm tra tiêu cực  
+          if user.age < 18:  
+              return False  # Kiểm tra tiêu cực  
+          if user.email is None:  
+              return False  # Kiểm tra tiêu cực  
+          return True  # Nếu không có vấn đề gì, trả về True  
+     ```
+     ```python
+      #Clean Code
+      def is_valid_user(user):  
+          if user and user.age >= 18 and user.email is not None:  
+              return True  # Kiểm tra tích cực  
+          return False  # Nếu không, trả về False  
+     ```
+   + **Avoid deep nesting(Tránh việc lồng sâu):** Điều này rất quan trọng! Tuyệt đối nên tránh các cấu trúc điều khiển lồng nhau sâu vì mã như vậy rất khó đọc, khó bảo trì và cũng thường dễ bị lỗi. 
+      ```python
+        #Unclean Code
+        def process_orders(orders):  
+            for order in orders:  
+                if order.is_valid():  
+                    if order.payment_received:  
+                        if order.shipping_address is not None:  
+                            ship_order(order)  
+                        else:  
+                            print("Shipping address is missing")  
+                    else:  
+                        print("Payment not received")  
+                else:  
+                    print("Invalid order")  
+      ```
+      ```python
+        #Clean Code
+        def process_orders(orders):  
+            for order in orders:  
+                if not order.is_valid():  
+                    print("Invalid order")  
+                    continue  
+                if not order.payment_received:  
+                    print("Payment not received")  
+                    continue  
+                if order.shipping_address is None:  
+                    print("Shipping address is missing")  
+                    continue  
+                  
+                ship_order(order)  
+      ```
+
+   + **Embrace errors(Chấp nhận lỗi):** Lỗi trong mã là điều không thể tránh khỏi, và lập trình viên cần phải thiết kế mã của mình để xử lý và phản ứng với lỗi một cách dễ dàng và hiệu quả. Thay vì cố gắng tránh hoặc che giấu lỗi, cần phải ghi nhận chúng và thiết lập các phương thức hợp lý để xử lý khi chúng xảy ra.
+
+     ```python
+      #Unclean Code
+      def divide_numbers(a, b):  
+          return a / b  
+        
+      result = divide_numbers(10, 0)  
+      print(f"The result is {result}")  
+     ```
+     ```python
+      #Clean code
+      def divide_numbers(a, b):  
+          try:  
+              return a / b  
+          except ZeroDivisionError:  
+              return "Error: Cannot divide by zero"  
+        
+      result = divide_numbers(10, 0)  
+      print(f"The result is {result}")  # "Error: Cannot divide by zero"  
+     ```
+
 
 ### 3. Ghi Chú và Định dạng (Comments & Formatting)
   - Comment có thể giúp dễ đọc code hơn. Tuy nhiên trong thực tế điều ngược lại thường xảy ra. Mặt khác, định dạng mã phù hợp (thêm dòng trống,..) sẽ giúp ích rất nhiều cho việc đọc và hiểu mã.
