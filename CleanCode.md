@@ -95,6 +95,36 @@
 
 ### 2. Cấu Trúc và Tổ Chức Mã Nguồn (Structure and Organization of Code)
 
+ - **Minimize The Number Of Parameters:** Hàm càng có ít tham số thì càng dễ đọc và gọi (và càng dễ đọc và hiểu các câu lệnh trong đó hàm được gọi).
+   + Hãy xem ví dụ này :
+   ```js
+    // Unclean Code
+    createUser('Max', 'Max', 'test@test.com', 'testers', 31, ['Sports', 'Cooking']);
+   ```  
+ - **Vậy có bao nhiêu tham số thì ổn ?**
+   + Càng ít tham số thì hàm càng dễ đọc và dễ hiểu hơn
+   + Tất nhiên, các hàm không có tham số rất dễ đọc và dễ hiểu. Ví dụ:
+   ```js
+   createSession();
+
+   user.save();
+   ```
+   + Tuy nhiên chính khả năng lấy tham số đã làm cho các hàm trở nên năng động và linh hoạt. Mặt khác, bạn có thể gặp phải các hàm trong đó hai hoặc nhiều tham số có thể gây nhầm lẫn và không rõ ràng/thông thường giá trị nào sẽ đi ở đâu. Ví dụ:
+   ```js
+    createRectangle(10, 9, 30, 12);
+
+    createUser('test@test.com', 31, 'max');
+   ```
+   + Vậy nên nếu không cần thiết hãy tránh tạo nhiều hơn hai tham số. Nó có thể làm cho mã của bạn khó gọi và khó đọc.
+ 
+ - **Làm cách nào để giảm số lượng tham số ?**
+   + Có thể thay thế các tham số bằng **map(bản đồ)** hoặc **array(mảng)**. Điều này giúp dễ đọc hơn nhiều.
+   + **Ví dụ:**
+   ```js
+    createRectangle({x: 10, y: 9, width: 30, high: 12});
+   ```
+
+
 ### 3. Comments & Formatting (Ghi Chú và Định dạng)
   - Comment có thể giúp dễ đọc code hơn. Tuy nhiên trong thực tế điều ngược lại thường xảy ra. Mặt khác, định dạng mã phù hợp (thêm dòng trống,..) sẽ giúp ích rất nhiều cho việc đọc và hiểu mã.
 
@@ -189,7 +219,7 @@
    - Định dạng dọc là việc sử dụng khoảng trắng - dọc trong tệp mã của bạn. Vì vậy, tất cả chỉ là thêm các dòng trống mà còn là nhóm các khái niệm liên quan lại với nhau và thêm khoảng trống giữa các khái niệm cách xa nhau.
 
    - **Adding Blank Lines**
-     + **Ví dụ:** Đoạn mã này không sử dụng khoảng trắng giữa các line 
+     + **Ví dụ:** Đoạn mã này không sử dụng cách dòng trống
      ```js
      function login (email, password) {
       if (!email.includes ('@') || password.length < 7) {
