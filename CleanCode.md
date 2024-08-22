@@ -38,12 +38,14 @@
     + Ngoài ra, bạn cũng có thể sử dụng một cụm từ ngắn có tính từ - thường để lưu trữ các giá trị boolean. **Ví dụ:** **_isValid, didAuthenticate, isLoggedIn, emailExists,..._**
     + **Ví dụ:**
       ```Python
-        # Unclean Code  
+        # Unclean Code Example
+
         def calc(a, b):  
           return a * b  
       ```
       ```Python
-        #Clean Code
+        #Clean Code Example
+        
         def calculateArea(length, width):  
           return length * width  
       ```
@@ -55,12 +57,14 @@
     + Giống như Variables & Properties, nếu bạn có thể cụ thể hơn thì việc sử dụng những tên cụ thể hơn như vậy thường hợp lý hơn. **Ví dụ:** **_createUser()_** thay vì chỉ **_create()_**.
     + **Ví dụ:**
     ```Python
-      # Unclean Code  
+      # Unclean Code Example
+
       def doStuff(x):  
         return x + 5  
     ```
     ```Python
-      #Clean Code
+      #Clean Code Example
+
       def incrementByFive(number):  
         return number + 5  
     ```
@@ -70,7 +74,8 @@
     + Tên class tốt cũng giống như tên biến và thuộc tính tốt nó thường là **danh từ**. **Ví dụ:** **_User, Product, RootAdministrator, Transaction, Payment,..._**
     + **Ví dụ:**
     ```Python
-      # Unclean Code  
+      # Unclean Code Example
+
       class A:  
         def __init__(self):  
             self.value = 10  
@@ -79,7 +84,8 @@
             return self.value   
     ```
     ```Python
-      #Clean Code
+      #Clean Code Example
+
       class Circle:  
         def __init__(self, radius):  
           self.radius = radius  
@@ -98,7 +104,7 @@
  - **Minimize The Number Of Parameters(Giảm thiểu số lượng tham số):** Hàm càng có ít tham số thì càng dễ đọc và gọi (và càng dễ đọc và hiểu các câu lệnh trong đó hàm được gọi).
    + Hãy xem ví dụ này :
    ```js
-    // Unclean Code
+    // Unclean Code Example
     createUser('Max', 'Max', 'test@test.com', 'testers', 31, ['Sports', 'Cooking']);
    ```  
  - **Vậy có bao nhiêu tham số thì ổn ?**
@@ -190,7 +196,7 @@
  - **Nguyên Tắc DRY (Don't Repeat Yourself):** là một trong những nguyên tắc quan trọng trong lập trình và phát triển phần mềm. Nguyên tắc này khuyến khích lập trình viên giảm thiểu sự trùng lặp mã nguồn bằng cách tái sử dụng mã. Việc áp dụng nguyên tắc DRY không chỉ giúp giảm thiểu lỗi mà còn làm cho mã nguồn dễ bảo trì, hiểu và mở rộng
    + **Ví dụ:**
    ```python
-    #Unclean Code
+    #Unclean Code Example
 
     def calculate_area_of_rectangle(length, width):  
         area = length * width  
@@ -208,7 +214,7 @@
    ```
 
    ```python
-    #Clean Code
+    #Clean Code Example
 
     def calculate_area_of_rectangle(length, width):  
         return length * width  
@@ -232,7 +238,7 @@
  - N**guyên Tắc KISS (Keep It Simple, Stupid):** Nguyên tắc KISS khuyến khích các lập trình viên giữ mã nguồn của họ đơn giản nhất có thể. Mục đích của nguyên tắc này là giảm thiểu độ phức tạp trong mã để dễ dàng bảo trì và mở rộng sau này.
    + **Ví dụ:**
    ```python
-    #Unclean Code
+    #Unclean Code Example
     def complex_calculation(a, b, c):  
         if a > 0:  
             if b > 0:  
@@ -246,7 +252,7 @@
             return (b * c)  
    ```
    ```python
-    #Clean Code
+    #Clean Code Example
     def simple_calculation(a, b, c):  
         return a * b + b * c + a * c  
         
@@ -257,7 +263,7 @@
  - **Nguyên Tắc YAGNI (You Aren't Gonna Need It):** Nguyên tắc YAGNI khuyến cáo bạn không nên thêm tính năng hoặc mã mà bạn nghĩ có thể cần trong tương lai. Thay vào đó, chỉ nên viết mã cho các yêu cầu hiện tại.
    +  **Ví dụ:**
    ```python
-    #Unclean Code
+    #Unclean Code Example
 
     class User:  
         def __init__(self, username, password):  
@@ -273,7 +279,7 @@
     user1 = User("user1", "password123")  
    ```
    ```python
-    #Clean Code
+    #Clean Code Example
 
     class User:  
         def __init__(self, username, password):  
@@ -292,7 +298,8 @@
    + **Prefer positive checks(Ưu tiên kiểm tra tích cực):** Nguyên tắc này khuyên chúng ta nên ưu tiên viết các kiểm tra mà cho thấy cái gì đó đúng hoặc hợp lệ, thay vì viết các kiểm tra mà cho thấy cái gì đó sai hoặc không hợp lệ.
     
      ```python
-      #Unclean Code
+      #Unclean Code Example
+
       def is_valid_user(user):  
           if not user:  
               return False  # Kiểm tra tiêu cực  
@@ -303,7 +310,8 @@
           return True  # Nếu không có vấn đề gì, trả về True  
      ```
      ```python
-      #Clean Code
+      #Clean Code Example
+
       def is_valid_user(user):  
           if user and user.age >= 18 and user.email is not None:  
               return True  # Kiểm tra tích cực  
@@ -311,7 +319,8 @@
      ```
    + **Avoid deep nesting(Tránh việc lồng sâu):** Điều này rất quan trọng! Tuyệt đối nên tránh các cấu trúc điều khiển lồng nhau sâu vì mã như vậy rất khó đọc, khó bảo trì và cũng thường dễ bị lỗi. 
       ```python
-        #Unclean Code
+        #Unclean Code Example
+
         def process_orders(orders):  
             for order in orders:  
                 if order.is_valid():  
@@ -326,7 +335,8 @@
                     print("Invalid order")  
       ```
       ```python
-        #Clean Code
+        #Clean Code Example
+
         def process_orders(orders):  
             for order in orders:  
                 if not order.is_valid():  
@@ -345,7 +355,8 @@
    + **Embrace errors(Chấp nhận lỗi):** Lỗi trong mã là điều không thể tránh khỏi, và lập trình viên cần phải thiết kế mã của mình để xử lý và phản ứng với lỗi một cách dễ dàng và hiệu quả. Thay vì cố gắng tránh hoặc che giấu lỗi, cần phải ghi nhận chúng và thiết lập các phương thức hợp lý để xử lý khi chúng xảy ra.
 
      ```python
-      #Unclean Code
+      #Unclean Code Example
+
       def divide_numbers(a, b):  
           return a / b  
         
@@ -353,7 +364,8 @@
       print(f"The result is {result}")  
      ```
      ```python
-      #Clean code
+      #Clean code Example
+
       def divide_numbers(a, b):  
           try:  
               return a / b  
@@ -538,6 +550,24 @@
      ```js
        const loggedInUserAuthenticatedByEmailAndPassword = ...
      ```
+   
+   - **Indentation** (Thụt đầu dòng) trong mã nguồn là cách tổ chức văn bản để thể hiện tính phân cấp và cấu trúc của mã. Việc thụt đầu dòng đúng cách giúp cải thiện khả năng đọc và hiểu mã của bạn, làm cho nó dễ duy trì và sửa chữa hơn. Indentation là rất quan trọng trong các ngôn ngữ lập trình như Python, nơi mà mức thụt đầu dòng xác định phạm vi của các khối mã.
+     + **Ví dụ:**
+      ```python
+      #Unclean Code Example
+
+      def calculate_area(length, width):  
+      result = length * width  
+      return result  
+      ```
+      ```python
+      #Clean Code Example
+
+      def calculate_area(length, width):  
+          result = length * width  
+          return result  
+
+      ```
 
 ### 4. Xử Lý Lỗi (Error Handling)
 
@@ -551,7 +581,7 @@
 
  - **Ví dụ:**
    ```python
-    #Unclean Code
+    #Unclean Code Example
 
     def divide(a, b):  
         result = a / b  
@@ -562,7 +592,7 @@
    ```
 
    ```python
-    #Clean Code
+    #Clean Code Example
 
     def divide(a, b):  
         try:  
@@ -596,7 +626,7 @@
    + **Tạo tài liệu cho dự án:** Các bài kiểm thử và kết quả của chúng có thể trở thành tài liệu quan trọng cho dự án, giúp cho việc bảo trì và phát triển về sau.
  - **Ví dụ:**
    ```python
-    #Uncelan Code
+    #Uncelan Code Example
 
     def add(a, b):  
         return a + b  
@@ -608,7 +638,8 @@
     # Không có kiểm thử chính thức hoặc tự động  
    ```
    ```python
-    #Clean code
+    #Clean code Example
+
     def add(a, b):  
         return a + b  
       
