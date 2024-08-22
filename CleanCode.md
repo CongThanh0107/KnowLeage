@@ -91,7 +91,7 @@
 
   #### Tránh đặt tên chung chung (Avoid Generic Names)
 
-    - Trong hầu hết các trường hợp, bạn nên tránh các tên chung chung như **_hand(), process(), data, item,..._**
+  - Trong hầu hết các trường hợp, bạn nên tránh các tên chung chung như **_hand(), process(), data, item,..._**
 
 ### 2. Cấu Trúc và Tổ Chức Mã Nguồn (Structure and Organization of Code)
 
@@ -99,10 +99,38 @@
   - Comment có thể giúp dễ đọc code hơn. Tuy nhiên trong thực tế điều ngược lại thường xảy ra. Mặt khác, định dạng mã phù hợp (thêm dòng trống,..) sẽ giúp ích rất nhiều cho việc đọc và hiểu mã.
 
   #### Bad Comment 
-    - Có rất nhiều comment không hay mà một số dev có thể thêm vào mã của mình. Trong trường hợp tốt nhất, "**bad**" có nghĩa là "**dư thừa**" trong trường hợp xấu nhất, nó có nghĩa là "**khó hiểu**" hoặc thậm chí là "**gây hiểu lầm**".
+  - Có rất nhiều comment không hay mà một số dev có thể thêm vào mã của mình. Trong trường hợp tốt nhất, "**bad**" có nghĩa là "**dư thừa**" trong trường hợp xấu nhất, nó có nghĩa là "**khó hiểu**" hoặc thậm chí là "**gây hiểu lầm**".
 
-    - **Dividers & Markers:**
-      + Ví dụ:
+  - **Dividers & Markers:**
+
+    + **Ví dụ:**
+      ```
+      // !!!!!!!
+      // CLASSES
+      // !!!!!!!
+
+      class User { ... }
+
+      class Product { ... }
+
+      // !!!!!!!
+      // MAIN
+      // !!!!!!!
+
+      const user = new User(...);
+    ```
+    + Bộ chia và điểm đánh dấu là không cần thiết. Nếu code được viết một cách rõ ràng (tức là bạn sử dụng tên riêng, v.v.), thì rõ ràng các phần mã khác nhau nói về điều gì.Không cần thêm điểm đánh dấu cho việc đó. Chúng chỉ dừng quá trình đọc và khiến việc phân tích tệp mã trở nên khó khăn hơn.
+
+ - **Redundant Information:**
+
+  + **Ví dụ:**
+  ```
+  function createUser() {   // creating a new user
+
+  }
+  ```
+  + Những comment như trong ví dụ này không thêm gì cả. Thay vào đó, bạn dừng lại và dành thời gian đọc chúng - chỉ để tìm hiểu những gì bạn đã biết vì mã đã sử dụng tên riêng. Comment này có thể hữu ích nếu bạn đặt tên kém
+
 
 ### 4. Xử Lý Lỗi (Error Handling)
 
