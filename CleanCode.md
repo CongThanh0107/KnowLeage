@@ -103,7 +103,7 @@
 
     - **Dividers & Markers:**
       + Ví dụ:
-      ```python
+      `
         // !!!!!!!
         // CLASSES
         // !!!!!!!
@@ -117,7 +117,7 @@
         // !!!!!!!
 
         const user = new User(...);
-      ```
+      `
 
 ### 4. Xử Lý Lỗi (Error Handling)
 
