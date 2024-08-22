@@ -463,6 +463,90 @@
 
 ### 4. Xử Lý Lỗi (Error Handling)
 
+ - **Thông báo lỗi rõ ràng:** Khi một lỗi xảy ra, cần thông báo cho người dùng một cách rõ ràng và dễ hiểu, để họ có thể biết cách khắc phục
+
+ - **Duy trì trạng thái ứng dụng:** Không làm cho ứng dụng dừng hoàn toàn mà phải duy trì trạng thái ổn định và có thể phục hồi.
+
+ - **Ghi lại lỗi:** Thực hiện ghi chú các lỗi xảy ra để phục vụ cho việc gỡ lỗi và cải tiến phần mềm trong tương lai.
+
+ - **Sử dụng cấu trúc try-except:** Trong nhiều ngôn ngữ lập trình, việc sử dụng khối xử lý lỗi cụ thể (như try và except trong Python) rất quan trọng để bắt lỗi và xử lý chúng một cách hợp lý.
+
+ - **Ví dụ:**
+   ```python
+    #Unclean Code
+
+    def divide(a, b):  
+        result = a / b  
+        print("Result:", result)  
+      
+    # Gọi hàm  
+    divide(10, 0)  # Gọi hàm với b = 0 => gây ra lỗi ZeroDivisionError  
+   ```
+
+   ```python
+    #Clean Code
+
+    def divide(a, b):  
+        try:  
+            result = a / b  
+            print("Result:", result)  
+        except ZeroDivisionError:  
+            print("Error: Division by zero is not allowed.")  
+        except TypeError:  
+            print("Error: Please provide two numbers.")  
+        else:  
+            print("Division completed successfully.")  
+        finally:  
+            print("Execution finished.")  
+      
+    # Gọi hàm  
+    divide(10, 0)  # Gọi hàm với b = 0  
+    divide(10, 2)  # Gọi hàm với b = 2  
+    divide(10, 'a')  # Gọi hàm với b là chuỗi  
+
+   ```
+ - **Kết luận:** Xử lý lỗi đúng cách rất cần thiết trong việc phát triển phần mềm. Nó không chỉ giúp gia tăng độ ổn định của ứng dụng mà còn cải thiện trải nghiệm người dùng. Việc thông báo lỗi rõ ràng và duy trì trạng thái ứng dụng là rất quan trọng, trong khi mã sạch sẽ dễ bảo trì hơn và giảm thiểu sự cố. Bằng cách sử dụng các cấu trúc phù hợp như try, except, else, và finally, lập trình viên có thể quản lý lỗi một cách hiệu quả và thân thiện với người dùng.
+
 ### 5. Kiểm Thử (Testing)
 
-### 6. Tổ Chức Mã (Code Organization)
+ - **Kiểm thử** là một bước quan trọng trong quy trình phát triển phần mềm, giúp xác định và sửa các lỗi trong mã trước khi sản phẩm được phát hành ra thị trường. Kiểm thử không chỉ giúp cải thiện chất lượng sản phẩm mà còn tạo điều kiện cho việc bảo trì và phát triển trong tương lai.
+ - **Các Mục Quan Trọng Trong Kiểm Thử:**
+   + **Đảm bảo chất lượng sản phẩm:** Kiểm thử giúp phát hiện lỗi và đảm bảo rằng phần mềm hoạt động theo yêu cầu đã xác định.
+   + G**iảm rủi ro:** Kiểm thử giúp giảm thiểu rủi ro liên quan đến việc phát hành phần mềm lỗi, điều này giúp bảo vệ uy tín của công ty.
+   + **Tăng tính đáng tin cậy:** Phần mềm đã được kiểm thử kỹ lưỡng sẽ đáng tin cậy hơn, gây dựng niềm tin nơi người dùng.
+   + **Giúp phát hiện các vấn đề trong quá trình phát triển:** Việc thực hiện kiểm thử thường xuyên giúp phát hiện các vấn đề trước khi chúng trở thành lớn hơn trong các giai đoạn phát triển sau này.
+   + **Tạo tài liệu cho dự án:** Các bài kiểm thử và kết quả của chúng có thể trở thành tài liệu quan trọng cho dự án, giúp cho việc bảo trì và phát triển về sau.
+ - **Ví dụ:**
+   ```python
+    #Uncelan Code
+
+    def add(a, b):  
+        return a + b  
+      
+    # Kiểm thử  
+    print("Test 1 (2 + 3):", add(2, 3))  # Kết quả đúng là 5  
+    print("Test 2 (2 + '3'):", add(2, '3'))  # Lỗi kiểu dữ liệu  
+      
+    # Không có kiểm thử chính thức hoặc tự động  
+   ```
+   ```python
+    #Clean code
+    def add(a, b):  
+        return a + b  
+      
+    # Kiểm thử tự động  
+    def test_add():  
+        assert add(2, 3) == 5, "Test Case 1 Failed"  
+        assert add(-1, 1) == 0, "Test Case 2 Failed"  
+        assert add(0, 0) == 0, "Test Case 3 Failed"  
+          
+        try:  
+            add(2, '3')  # Kiểm thử trường hợp lỗi kiểu dữ liệu  
+        except TypeError:  
+            print("Test Case 4 Passed: TypeError was raised as expected")  
+          
+        print("All test cases passed!")  
+      
+    # Gọi hàm kiểm thử  
+    test_add()  
+   ```
