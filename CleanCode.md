@@ -32,7 +32,7 @@
 
   #### Quy tắc đặt tên (Naming Rules)
 
-  - **Variables & Properties:** 
+  - **Variables & Properties (Biến Và Thuộc tính):** 
     + Các biến và thuộc tính chứa dữ liệu : numbers, text (strings), boolean values, objects, lists, arrays, maps
     + Các biến và thuộc tính thường phải có một danh từ làm tên. **Ví dụ:** **_user, product, customer, database, transaction,..._**
     + Ngoài ra, bạn cũng có thể sử dụng một cụm từ ngắn có tính từ - thường để lưu trữ các giá trị boolean. **Ví dụ:** **_isValid, didAuthenticate, isLoggedIn, emailExists,..._**
@@ -48,7 +48,7 @@
           return length * width  
       ```
 
-  - **Functions & Methods:** Các hàm và phương thức có thể được gọi để thực thi một số mã. Điều đó có nghĩa là họ thực hiện các nhiệm vụ và hoạt động.
+  - **Functions & Methods (Chức năng và Phương thức):** Các hàm và phương thức có thể được gọi để thực thi một số mã. Điều đó có nghĩa là họ thực hiện các nhiệm vụ và hoạt động.
     + Do đó, các hàm và phương thức thường phải nhận một động từ làm tên. **Ví dụ:** **_login(), createUser(), database.insert(), log(),..._**
     + Ngoài ra, các hàm và phương thức cũng có thể được sử dụng để chủ yếu tạo ra các giá trị - sau đó, đặc biệt là khi tạo các giá trị boolean, bạn cũng có thể sử dụng các cụm từ ngắn có tính từ. **Ví dụ:** **_isValid(...), isEmail(...), isEmpty(...),..._**
     + Nên tránh những tên như: **_email(), user(),..._** Những tên này nghe giống như thuộc tính. Thay vào đó, hãy ưu tiên **_getEmail(),..._**
@@ -65,7 +65,7 @@
         return number + 5  
     ```
 
-  - **Classes:** Các lớp được sử dụng để tạo các đối tượng (trừ khi đó là một static class).
+  - **Classes(Lớp):** Các lớp được sử dụng để tạo các đối tượng (trừ khi đó là một static class).
     + Do đó tên class phải mô tả loại đối tượng mà nó sẽ tạo. Ngay cả khi đó là một ltatic class (tức là nó sẽ không được khởi tạo), vẫn sẽ sử dụng nó như một loại vùng chứa cho các phần dữ liệu và/hoặc chức năng khác nhau.
     + Tên class tốt cũng giống như tên biến và thuộc tính tốt nó thường là **danh từ**. **Ví dụ:** **_User, Product, RootAdministrator, Transaction, Payment,..._**
     + **Ví dụ:**
@@ -95,7 +95,7 @@
 
 ### 2. Cấu Trúc và Tổ Chức Mã Nguồn (Structure and Organization of Code)
 
- - **Minimize The Number Of Parameters:** Hàm càng có ít tham số thì càng dễ đọc và gọi (và càng dễ đọc và hiểu các câu lệnh trong đó hàm được gọi).
+ - **Minimize The Number Of Parameters(Giảm thiểu số lượng tham số):** Hàm càng có ít tham số thì càng dễ đọc và gọi (và càng dễ đọc và hiểu các câu lệnh trong đó hàm được gọi).
    + Hãy xem ví dụ này :
    ```js
     // Unclean Code
@@ -124,7 +124,7 @@
     createRectangle({x: 10, y: 9, width: 30, high: 12});
    ```
  
- - **Keep Functions Small**
+ - **Keep Functions Small (Giữ chức năng nhỏ)**
    + Bên cạnh số lượng tham số, phần thân hàm cũng nên được giữ ở mức nhỏ gọn nhất
    + Bởi vì kích thước nhỏ hơn có nghĩa là ít mã để đọc và hiểu hơn. Nhưng ngoài ra, nó cũng buộc bạn (lý tưởng nhất) phải viết mã dễ đọc - ví dụ bằng cách trích xuất các hàm khác sử dụng cách đặt tên tốt.
    + **Ví dụ:**
@@ -139,7 +139,7 @@
    }
    ```
  
- - **Rules Of Thumb**: Có hai quy tắc kinh nghiệm đơn giản , giúp bạn quyết định thời điểm chia tách mã của mình
+ - **Rules Of Thumb (Quy tắc ngón tay cái)**: Có hai quy tắc kinh nghiệm đơn giản , giúp bạn quyết định thời điểm chia tách mã của mình
    + 1.Trích xuất mã hoạt động trên cùng chức năng/có liên quan chặt chẽ với nhau
    + 2.Trích xuất mã yêu cầu giải thích nhiều hơn mã xung quanh
    + Đây là ví dụ cho quy tắc số 1:
@@ -287,7 +287,7 @@
     user1 = User("user1", "password123")  
    ```
  
- - **Control Structures:** Cho dù bạn đang phát triển loại ứng dụng nào - rất có thể bạn cũng sẽ sử dụng các cấu trúc điều khiển trong mã của mình: câu lệnh if, vòng lặp for, cũng có thể là vòng lặp while hoặc câu lệnh switch-case. Cấu trúc điều khiển cực kỳ quan trọng để điều phối luồng mã và tất nhiên bạn nên sử dụng chúng. Nhưng các cấu trúc điều khiển cũng có thể dẫn đến mã xấu hoặc dưới mức tối ưu và do đó đóng một vai trò quan trọng khi viết mã sạch.Có ba lĩnh vực cải tiến chính mà bạn nên biết:
+ - **Control Structures (Cấu trúc điều khiển):** Cho dù bạn đang phát triển loại ứng dụng nào - rất có thể bạn cũng sẽ sử dụng các cấu trúc điều khiển trong mã của mình: câu lệnh if, vòng lặp for, cũng có thể là vòng lặp while hoặc câu lệnh switch-case. Cấu trúc điều khiển cực kỳ quan trọng để điều phối luồng mã và tất nhiên bạn nên sử dụng chúng. Nhưng các cấu trúc điều khiển cũng có thể dẫn đến mã xấu hoặc dưới mức tối ưu và do đó đóng một vai trò quan trọng khi viết mã sạch.Có ba lĩnh vực cải tiến chính mà bạn nên biết:
 
    + **Prefer positive checks(Ưu tiên kiểm tra tích cực):** Nguyên tắc này khuyên chúng ta nên ưu tiên viết các kiểm tra mà cho thấy cái gì đó đúng hoặc hợp lệ, thay vì viết các kiểm tra mà cho thấy cái gì đó sai hoặc không hợp lệ.
     
@@ -371,7 +371,7 @@
   #### Bad Comment 
   - Có rất nhiều comment không hay mà một số dev có thể thêm vào mã của mình. Trong trường hợp tốt nhất, "**bad**" có nghĩa là "**dư thừa**" trong trường hợp xấu nhất, nó có nghĩa là "**khó hiểu**" hoặc thậm chí là "**gây hiểu lầm**".
 
-  - **Dividers & Markers:**
+  - **Dividers & Markers (Bộ chia & điểm đánh dấu):**
 
     + **Ví dụ:**
       ```js
@@ -392,7 +392,7 @@
 
     + Bộ chia và điểm đánh dấu là không cần thiết. Nếu code được viết một cách rõ ràng (tức là bạn sử dụng tên riêng, v.v.), thì rõ ràng các phần mã khác nhau nói về điều gì.Không cần thêm điểm đánh dấu cho việc đó. Chúng chỉ dừng quá trình đọc và khiến việc phân tích tệp mã trở nên khó khăn hơn.
 
- - **Redundant Information:**
+ - **Redundant Information (Thông tin dư thừa):**
 
    + **Ví dụ:**
       ```js
@@ -418,7 +418,7 @@
       ```
    + Tránh việc Comment Out Code. Thay vào đó hãy xoá nó, nó có thể làm lộn xộn tệp mã ...
  
- - **Misleading Comments:**
+ - **Misleading Comments (Comment sai lệch):**
 
    + **Ví dụ:**
       ```js
@@ -429,18 +429,18 @@
    + Có lẽ loại comment tệ nhất là những comment thực sự đánh lừa người đọc. Hãy hạn chế viết sai các comment như thế này
 
   #### Good Comment
-   - **Legal Information:** Trong một số dự án và/hoặc công ty, bạn có thể được yêu cầu thêm thông tin pháp lý vào tệp mã của mình.
+   - **Legal Information (Thông tin pháp lý):** Trong một số dự án và/hoặc công ty, bạn có thể được yêu cầu thêm thông tin pháp lý vào tệp mã của mình.
      + **Ví dụ:**
      ```js
       // (c) Academind GmbH
      ```
-   - **"Required" Explanations:** Trong một số trường hợp việc thêm các giải thích bổ sung bên cạnh mã của bạn sẽ có ích - ngay cả khi bạn đặt tên chính xác cho mọi thứ.
+   - **"Required" Explanations (Giải thích "bắt buộc"):** Trong một số trường hợp việc thêm các giải thích bổ sung bên cạnh mã của bạn sẽ có ích - ngay cả khi bạn đặt tên chính xác cho mọi thứ.
      + **Một ví dụ điển hình là biểu thức chính quy:** Mặc dù tên passRegex cho chúng ta biết rằng biểu thức chính quy này sẽ được sử dụng để xác thực mật khẩu nhưng vẫn chưa rõ quy tắc cụ thể nào sẽ được áp dụng.
      ```js
        # Min. 8 characters, at least: one letter, one number, one special character const passwordRegex = /^(?=.* [A-Za-z])(?=.*\d)(?=.*[@$!%*#?&]) [A-Za-z\d@$!%*#? &]{8,}$/
      ```
    
-   - **Warnings:** Ngoài ra, trong một số trường hợp hiếm hoi, cảnh báo bên cạnh một số mã có thể có ý nghĩa, chẳng hạn như nếu kiểm thử đơn vị có thể mất nhiều thời gian để hoàn thành hoặc nếu một chức năng nhất định không hoạt động trong một số môi trường nhất định.
+   - **Warnings (Cảnh báo):** Ngoài ra, trong một số trường hợp hiếm hoi, cảnh báo bên cạnh một số mã có thể có ý nghĩa, chẳng hạn như nếu kiểm thử đơn vị có thể mất nhiều thời gian để hoàn thành hoặc nếu một chức năng nhất định không hoạt động trong một số môi trường nhất định.
      + **Ví dụ:**
      ```js
       function fetchTestData() {...} // requires local dev server
@@ -454,11 +454,11 @@
 
       }
      ```
-  #### Vertical Formatting
+  #### Vertical Formatting (Định dạng dọc)
 
    - Định dạng dọc là việc sử dụng khoảng trắng - dọc trong tệp mã của bạn. Vì vậy, tất cả chỉ là thêm các dòng trống mà còn là nhóm các khái niệm liên quan lại với nhau và thêm khoảng trống giữa các khái niệm cách xa nhau.
 
-   - **Adding Blank Lines**
+   - **Adding Blank Lines (Thêm dòng trống)**
      + **Ví dụ:** Đoạn mã này không sử dụng cách dòng trống
      ```js
      function login (email, password) {
@@ -510,7 +510,7 @@
       const user = new User (email, password); user.saveToDatabase();
       }
      ```
-   - **Ordering Functions & Methods:** Khi nói đến việc sắp xếp các hàm và phương thức, bạn nên tuân theo "quy tắc giảm dần"
+   - **Ordering Functions & Methods (Sắp xếp Chức năng & Phương thức):** Khi nói đến việc sắp xếp các hàm và phương thức, bạn nên tuân theo "quy tắc giảm dần"
      + **Ví dụ:**  Hàm **validate** được gọi bởi hàm **login** phải ở (gần) bên dưới hàm **login** - ít nhất là nếu ngôn ngữ lập trình của bạn cho phép sắp xếp như vậy.
      ```js
      function login (email, password) { 
@@ -519,12 +519,12 @@
 
      function validate (email, password) {...}
      ```
-   - **Splitting Code Across Files:** Nếu tệp mã của bạn lớn hơn và/hoặc nếu bạn có nhiều "thứ" khác nhau trong một tệp (ví dụ: nhiều định nghĩa lớp), thì nên chia mã đó thành nhiều tệp và sau đó sử dụng các câu lệnh nhập và xuất để kết nối mã của bạn. Điều này đảm bảo rằng toàn bộ tệp mã riêng lẻ của bạn vẫn có thể đọc được.
+   - **Splitting Code Across Files (Tách mã giữa các tập tin):** Nếu tệp mã của bạn lớn hơn và/hoặc nếu bạn có nhiều "thứ" khác nhau trong một tệp (ví dụ: nhiều định nghĩa lớp), thì nên chia mã đó thành nhiều tệp và sau đó sử dụng các câu lệnh nhập và xuất để kết nối mã của bạn. Điều này đảm bảo rằng toàn bộ tệp mã riêng lẻ của bạn vẫn có thể đọc được.
   
-  ### Horizontal Formatting
+  ### Horizontal Formatting (Định dạng ngang)
    - Tất nhiên, định dạng theo chiều ngang là sử dụng không gian theo chiều ngang trong tệp mã của bạn, điều đó chủ yếu có nghĩa là các dòng phải được giữ ngắn và dễ đọc.
 
-   - **Breaking Lines Into Multiple Lines:** tất nhiên có thể đặt những dòng cực dài trên màn hình của mình - ít nhất là nếu bạn có thể đọc được văn bản/phông chữ nhỏ. Nhưng chỉ vì nó phù hợp với một dòng về mặt kỹ thuật, không có nghĩa đó là mã tốt.
+   - **Breaking Lines Into Multiple Lines (Chia dòng thành nhiều dòng):** tất nhiên có thể đặt những dòng cực dài trên màn hình của mình - ít nhất là nếu bạn có thể đọc được văn bản/phông chữ nhỏ. Nhưng chỉ vì nó phù hợp với một dòng về mặt kỹ thuật, không có nghĩa đó là mã tốt.
 
      + **Ví dụ:**
      ```js
@@ -533,7 +533,7 @@
       password = getValidated Password();
      }
      ```
-   - **Using Short Names:** Tên nên mang tính mô tả. Nhưng không nên lãng phí dung lượng và khiến chúng khó đọc hơn bằng cách viết quá cụ thể.
+   - **Using Short Names (Sử dụng tên ngắn):** Tên nên mang tính mô tả. Nhưng không nên lãng phí dung lượng và khiến chúng khó đọc hơn bằng cách viết quá cụ thể.
      + **Ví dụ:** Trong trường hợp này chỉ cần đặt tên **_"loggedInUser"_** là được
      ```js
        const loggedInUserAuthenticatedByEmailAndPassword = ...
