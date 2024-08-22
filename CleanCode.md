@@ -123,9 +123,24 @@
    ```js
     createRectangle({x: 10, y: 9, width: 30, high: 12});
    ```
+ 
+ - **Keep Functions Small**
+   + Bên cạnh số lượng tham số, phần thân hàm cũng nên được giữ ở mức nhỏ gọn nhất
+   + Bởi vì kích thước nhỏ hơn có nghĩa là ít mã để đọc và hiểu hơn. Nhưng ngoài ra, nó cũng buộc bạn (lý tưởng nhất) phải viết mã dễ đọc - ví dụ bằng cách trích xuất các hàm khác sử dụng cách đặt tên tốt.
+   + **Ví dụ:**
+   ```js
+    function login (email, password) {
+
+    validateUserInput (email, password);
+
+    const existingUser = findUserByEmail(email);
+
+    existingUser.validatePassword (password);
+   }
+   ```
 
 
-### 3. Comments & Formatting (Ghi Chú và Định dạng)
+### 3. Ghi Chú và Định dạng (Comments & Formatting)
   - Comment có thể giúp dễ đọc code hơn. Tuy nhiên trong thực tế điều ngược lại thường xảy ra. Mặt khác, định dạng mã phù hợp (thêm dòng trống,..) sẽ giúp ích rất nhiều cho việc đọc và hiểu mã.
 
   #### Bad Comment 
