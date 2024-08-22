@@ -104,7 +104,7 @@
   - **Dividers & Markers:**
 
     + **Ví dụ:**
-      ```
+      ```js
       // !!!!!!!
       // CLASSES
       // !!!!!!!
@@ -118,19 +118,47 @@
       // !!!!!!!
 
       const user = new User(...);
-    ```
+      ```
+
     + Bộ chia và điểm đánh dấu là không cần thiết. Nếu code được viết một cách rõ ràng (tức là bạn sử dụng tên riêng, v.v.), thì rõ ràng các phần mã khác nhau nói về điều gì.Không cần thêm điểm đánh dấu cho việc đó. Chúng chỉ dừng quá trình đọc và khiến việc phân tích tệp mã trở nên khó khăn hơn.
 
  - **Redundant Information:**
 
-  + **Ví dụ:**
-  ```
-  function createUser() {   // creating a new user
+   + **Ví dụ:**
+      ```js
+      function createUser() {   // creating a new user
+        ...
+      }
+      ```
+   + Những comment như trong ví dụ này không thêm gì cả. Thay vào đó, bạn dừng lại và dành thời gian đọc chúng - chỉ để tìm hiểu những gì bạn đã biết vì mã đã sử dụng tên riêng. Comment này có thể hữu ích nếu bạn đặt tên kém
 
-  }
-  ```
-  + Những comment như trong ví dụ này không thêm gì cả. Thay vào đó, bạn dừng lại và dành thời gian đọc chúng - chỉ để tìm hiểu những gì bạn đã biết vì mã đã sử dụng tên riêng. Comment này có thể hữu ích nếu bạn đặt tên kém
+ - **Commented Out Code:**
 
+   + **Ví dụ:**
+      ```js
+        function createUser() {
+          ...
+        }
+
+        // function createProduct() {
+
+        // ...
+
+        // }
+      ```
+   + Tránh việc Comment Out Code. Thay vào đó hãy xoá nó, nó có thể làm lộn xộn tệp mã ...
+ 
+ - **Misleading Comments:**
+
+   + **Ví dụ:**
+      ```js
+      function login() { // create a new user
+        ...
+      }
+      ```
+   + Có lẽ loại comment tệ nhất là những comment thực sự đánh lừa người đọc. Hãy hạn chế viết sai các comment như thế này
+
+  #### Good Comment
 
 ### 4. Xử Lý Lỗi (Error Handling)
 
