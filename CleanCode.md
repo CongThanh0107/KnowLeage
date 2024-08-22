@@ -159,6 +159,115 @@
    + Có lẽ loại comment tệ nhất là những comment thực sự đánh lừa người đọc. Hãy hạn chế viết sai các comment như thế này
 
   #### Good Comment
+   - **Legal Information:** Trong một số dự án và/hoặc công ty, bạn có thể được yêu cầu thêm thông tin pháp lý vào tệp mã của mình.
+     + **Ví dụ:**
+     ```js
+      // (c) Academind GmbH
+     ```
+   - **"Required" Explanations:** Trong một số trường hợp việc thêm các giải thích bổ sung bên cạnh mã của bạn sẽ có ích - ngay cả khi bạn đặt tên chính xác cho mọi thứ.
+     + **Một ví dụ điển hình là biểu thức chính quy:** Mặc dù tên passRegex cho chúng ta biết rằng biểu thức chính quy này sẽ được sử dụng để xác thực mật khẩu nhưng vẫn chưa rõ quy tắc cụ thể nào sẽ được áp dụng.
+     ```js
+       # Min. 8 characters, at least: one letter, one number, one special character const passwordRegex = /^(?=.* [A-Za-z])(?=.*\d)(?=.*[@$!%*#?&]) [A-Za-z\d@$!%*#? &]{8,}$/
+     ```
+   
+   - **Warnings:** Ngoài ra, trong một số trường hợp hiếm hoi, cảnh báo bên cạnh một số mã có thể có ý nghĩa, chẳng hạn như nếu kiểm thử đơn vị có thể mất nhiều thời gian để hoàn thành hoặc nếu một chức năng nhất định không hoạt động trong một số môi trường nhất định.
+     + **Ví dụ:**
+     ```js
+      function fetchTestData() {...} // requires local dev server
+     ```
+   - **Todo Notes:** Tất nhiên, tốt hơn là nên triển khai hoàn toàn hoặc không triển khai một tính năng nào hoặc theo từng bước tăng dần không yêu cầu nhận xét "**Todo**" - nhưng việc để lại nhận xét "Todo" chỗ này chỗ kia sẽ không có hại gì, đặc biệt là vì các IDE hiện đại giúp tìm thấy những tính năng này.
+     + **Ví dụ:**
+     ```js
+     function login (email, password) {
+
+      // todo: add password validation
+
+      }
+     ```
+  #### Vertical Formatting
+
+   - Định dạng dọc là việc sử dụng khoảng trắng - dọc trong tệp mã của bạn. Vì vậy, tất cả chỉ là thêm các dòng trống mà còn là nhóm các khái niệm liên quan lại với nhau và thêm khoảng trống giữa các khái niệm cách xa nhau.
+
+   - **Adding Blank Lines**
+     + **Ví dụ:** Đoạn mã này không sử dụng khoảng trắng giữa các line 
+     ```js
+     function login (email, password) {
+      if (!email.includes ('@') || password.length < 7) {
+      throw new Error('Invalid input!');
+      }
+      const user = findUserByEmail(email);
+      const passwordIsValid = compare Encrypted Password (user.password, 
+            password);
+      if (passwordIsValid) {
+
+      createSession();
+      } else {
+      throw new Error('Invalid credentials!');
+      }
+     }
+      function signup (email, password) {
+      if (!email.includes ('@') || password.length < 7) {
+      throw new Error('Invalid input!');
+      }
+      const user = new User (email, password); user.saveToDatabase();
+      }
+     ```
+     + Đoạn mã này bổ sung những dòng trống:
+     ```js
+     function login (email, password) {
+      if (!email.includes ('@') || password.length < 7) {
+      throw new Error('Invalid input!');
+      }
+
+      const user = findUserByEmail(email);
+
+      const passwordIsValid = compare Encrypted Password (user.password, 
+            password);
+
+      if (passwordIsValid) {
+
+      createSession();
+      } else {
+      throw new Error('Invalid credentials!');
+      }
+     }
+
+      function signup (email, password) {
+      if (!email.includes ('@') || password.length < 7) {
+      throw new Error('Invalid input!');
+      }
+
+      const user = new User (email, password); user.saveToDatabase();
+      }
+     ```
+   - **Ordering Functions & Methods:** Khi nói đến việc sắp xếp các hàm và phương thức, bạn nên tuân theo "quy tắc giảm dần"
+     + **Ví dụ:**  Hàm **validate** được gọi bởi hàm **login** phải ở (gần) bên dưới hàm **login** - ít nhất là nếu ngôn ngữ lập trình của bạn cho phép sắp xếp như vậy.
+     ```js
+     function login (email, password) { 
+        validate(email, passsword);
+      }
+
+     function validate (email, password) {...}
+     ```
+   - **Splitting Code Across Files:** Nếu tệp mã của bạn lớn hơn và/hoặc nếu bạn có nhiều "thứ" khác nhau trong một tệp (ví dụ: nhiều định nghĩa lớp), thì nên chia mã đó thành nhiều tệp và sau đó sử dụng các câu lệnh nhập và xuất để kết nối mã của bạn. Điều này đảm bảo rằng toàn bộ tệp mã riêng lẻ của bạn vẫn có thể đọc được.
+  
+  ### Horizontal Formatting
+   - Tất nhiên, định dạng theo chiều ngang là sử dụng không gian theo chiều ngang trong tệp mã của bạn, điều đó chủ yếu có nghĩa là các dòng phải được giữ ngắn và dễ đọc.
+
+   - **Breaking Lines Into Multiple Lines:** tất nhiên có thể đặt những dòng cực dài trên màn hình của mình - ít nhất là nếu bạn có thể đọc được văn bản/phông chữ nhỏ. Nhưng chỉ vì nó phù hợp với một dòng về mặt kỹ thuật, không có nghĩa đó là mã tốt.
+
+     + **Ví dụ:**
+     ```js
+     if (!email && !password) {
+      email = getValidatedEmail();
+      password = getValidated Password();
+     }
+     ```
+   - **Using Short Names:** Tên nên mang tính mô tả. Nhưng không nên lãng phí dung lượng và khiến chúng khó đọc hơn bằng cách viết quá cụ thể.
+     + **Ví dụ:** Trong trường hợp này chỉ cần đặt tên **_"loggedInUser"_** là được
+     ```js
+       const loggedInUserAuthenticatedByEmailAndPassword = ...
+     ```
 
 ### 4. Xử Lý Lỗi (Error Handling)
 
