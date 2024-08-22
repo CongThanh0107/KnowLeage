@@ -103,21 +103,6 @@
 
     - **Dividers & Markers:**
       + Ví dụ:
-      `
-        // !!!!!!!
-        // CLASSES
-        // !!!!!!!
-
-        class User { ... }
-
-        class Product { ... }
-
-        // !!!!!!!
-        // MAIN
-        // !!!!!!!
-
-        const user = new User(...);
-      `
 
 ### 4. Xử Lý Lỗi (Error Handling)
 
