@@ -100,10 +100,10 @@
 
   #### Bad Comment 
     - Có rất nhiều comment không hay mà một số dev có thể thêm vào mã của mình. Trong trường hợp tốt nhất, "**bad**" có nghĩa là "**dư thừa**" trong trường hợp xấu nhất, nó có nghĩa là "**khó hiểu**" hoặc thậm chí là "**gây hiểu lầm**".
-    
+
     - **Dividers & Markers:**
       + Ví dụ:
-        ```
+      ```
         // !!!!!!!
         // CLASSES
         // !!!!!!!
@@ -117,7 +117,7 @@
         // !!!!!!!
 
         const user = new User(...);
-        ```
+      ```
 
 ### 4. Xử Lý Lỗi (Error Handling)
 
