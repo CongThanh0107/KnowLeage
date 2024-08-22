@@ -138,7 +138,98 @@
     existingUser.validatePassword (password);
    }
    ```
+ 
+ - **Rules Of Thumb**: Có hai quy tắc kinh nghiệm đơn giản , giúp bạn quyết định thời điểm chia tách mã của mình
+   + 1.Trích xuất mã hoạt động trên cùng chức năng/có liên quan chặt chẽ với nhau
+   + 2.Trích xuất mã yêu cầu giải thích nhiều hơn mã xung quanh
+   + Đây là ví dụ cho quy tắc số 1:
+   ```js
+    function updateUser (userData) {
+    validateUserData(userData);
+    const user = findUserById(userData.id);
+    user.setAge (userData.age);
+    user.setName (userData.name);
+    user.save();
+    }
+   ```
+   + **setAge()** và **setName()** có cùng mục tiêu/chức năng: Chúng cập nhật dữ liệu trong đối tượng **user.save()** sau đó xác nhận những thay đổi này.Do đó bạn có thể chia chức năng:
+   ```js
+    function updateUser (userData) { 
+      validateUserData (userData); 
+      applyUpdate(userData);
+    }
 
+    function apply Update (userData) {
+      const user = findUserById(userData.id);
+      user.setAge(userData.age);
+      user.setName (userData.name);
+      user.save();
+    }
+   ```
+   + Đây là ví dụ cho quy tắc số 2:
+   ```js
+    function process Transaction (transaction) {
+      if (transaction.type === 'UNKNOWN') {
+      throw new Error('Invalid transaction type.');
+    }
+    if (transaction.type === 'PAYMENT') {
+      process Payment (transaction);
+      }
+    }
+   ```
+   + Tất nhiên, việc xác thực xem loại giao dịch có phải là **'UNKNOWN'** không khó đọc hay không nhưng nó chắc chắn cần được giải thích nhiều hơn từ phía bạn thay vì chỉ đọc **processPayment(...)**.Do đó, bạn có thể cấu trúc lại đoạn mã thành:
+   ```js
+    function process Transaction (transaction) {
+      validateTransaction (transaction);
+      if (isPayment (transaction)) {
+        process Payment (transaction);
+      }
+    }
+   ```
+ 
+ - **Nguyên Tắc DRY (Don't Repeat Yourself):** là một trong những nguyên tắc quan trọng trong lập trình và phát triển phần mềm. Nguyên tắc này khuyến khích lập trình viên giảm thiểu sự trùng lặp mã nguồn bằng cách tái sử dụng mã. Việc áp dụng nguyên tắc DRY không chỉ giúp giảm thiểu lỗi mà còn làm cho mã nguồn dễ bảo trì, hiểu và mở rộng
+   + **Ví dụ:**
+   ```python
+    #Unclean Code
+
+    def calculate_area_of_rectangle(length, width):  
+        area = length * width  
+        print("Area of Rectangle:", area)  
+      
+    def calculate_area_of_square(side):  
+        area = side * side  
+        print("Area of Square:", area)  
+      
+    # Tính toán diện tích của hình chữ nhật  
+    calculate_area_of_rectangle(10, 5)  
+      
+    # Tính toán diện tích của hình vuông  
+    calculate_area_of_square(4)   
+   ```
+
+   ```python
+    #Clean Code
+
+    def calculate_area_of_rectangle(length, width):  
+        return length * width  
+      
+    def calculate_area_of_square(side):  
+        return calculate_area_of_rectangle(side, side)  
+      
+    def print_area(area, shape):  
+        print(f"Area of {shape}: {area}")  
+      
+    # Tính toán diện tích của hình chữ nhật  
+    rectangle_area = calculate_area_of_rectangle(10, 5)  
+    print_area(rectangle_area, "Rectangle")  
+      
+    # Tính toán diện tích của hình vuông  
+    square_area = calculate_area_of_square(4)  
+    print_area(square_area, "Square")   
+
+   ```
+ 
+ - 
 
 ### 3. Ghi Chú và Định dạng (Comments & Formatting)
   - Comment có thể giúp dễ đọc code hơn. Tuy nhiên trong thực tế điều ngược lại thường xảy ra. Mặt khác, định dạng mã phù hợp (thêm dòng trống,..) sẽ giúp ích rất nhiều cho việc đọc và hiểu mã.
