@@ -229,7 +229,63 @@
 
    ```
  
- - 
+ - N**guyên Tắc KISS (Keep It Simple, Stupid):** Nguyên tắc KISS khuyến khích các lập trình viên giữ mã nguồn của họ đơn giản nhất có thể. Mục đích của nguyên tắc này là giảm thiểu độ phức tạp trong mã để dễ dàng bảo trì và mở rộng sau này.
+   + **Ví dụ:**
+   ```python
+    #Unclean Code
+    def complex_calculation(a, b, c):  
+        if a > 0:  
+            if b > 0:  
+                if c > 0:  
+                    return (a * b) + (b * c) + (a * c)  
+                else:  
+                    return (a * b) + (b * c)  
+            else:  
+                return (a * c)  
+        else:  
+            return (b * c)  
+   ```
+   ```python
+    #Clean Code
+    def simple_calculation(a, b, c):  
+        return a * b + b * c + a * c  
+        
+    result = simple_calculation(2, 3, 4)  
+    print(result)  
+   ```
+ 
+ - **Nguyên Tắc YAGNI (You Aren't Gonna Need It):** Nguyên tắc YAGNI khuyến cáo bạn không nên thêm tính năng hoặc mã mà bạn nghĩ có thể cần trong tương lai. Thay vào đó, chỉ nên viết mã cho các yêu cầu hiện tại.
+   +  **Ví dụ:**
+   ```python
+    #Unclean Code
+
+    class User:  
+        def __init__(self, username, password):  
+            self.username = username  
+            self.password = password  
+            self.is_admin = False  # Trường này không cần thiết ngay bây giờ nhưng được thêm vào dự phòng  
+            self.last_login = None  # Đã thêm trường này cho một tính năng chưa được xác định  
+      
+        def set_admin(self):  
+            self.is_admin = True  
+      
+    # Tạo người dùng  
+    user1 = User("user1", "password123")  
+   ```
+   ```python
+    #Clean Code
+
+    class User:  
+        def __init__(self, username, password):  
+            self.username = username  
+            self.password = password  
+      
+        def set_password(self, new_password):  
+            self.password = new_password  
+      
+    # Tạo người dùng  
+    user1 = User("user1", "password123")  
+   ```
 
 ### 3. Ghi Chú và Định dạng (Comments & Formatting)
   - Comment có thể giúp dễ đọc code hơn. Tuy nhiên trong thực tế điều ngược lại thường xảy ra. Mặt khác, định dạng mã phù hợp (thêm dòng trống,..) sẽ giúp ích rất nhiều cho việc đọc và hiểu mã.
