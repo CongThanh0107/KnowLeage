@@ -98,6 +98,26 @@
 ### 3. Comments & Formatting (Ghi Chú và Định dạng)
   - Comment có thể giúp dễ đọc code hơn. Tuy nhiên trong thực tế điều ngược lại thường xảy ra. Mặt khác, định dạng mã phù hợp (thêm dòng trống,..) sẽ giúp ích rất nhiều cho việc đọc và hiểu mã.
 
+  #### Bad Comment 
+    - Có rất nhiều comment không hay mà một số dev có thể thêm vào mã của mình. Trong trường hợp tốt nhất, "**bad**" có nghĩa là "**dư thừa**" trong trường hợp xấu nhất, nó có nghĩa là "**khó hiểu**" hoặc thậm chí là "**gây hiểu lầm**".
+    - **Dividers & Markers:**
+      + Ví dụ:
+        ```
+        // !!!!!!!
+        // CLASSES
+        // !!!!!!!
+
+        class User { ... }
+
+        class Product { ... }
+
+        // !!!!!!!
+        // MAIN
+        // !!!!!!!
+        
+        const user = new User(...);
+        ```
+
 ### 4. Xử Lý Lỗi (Error Handling)
 
 ### 5. Kiểm Thử (Testing)
